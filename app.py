@@ -8,7 +8,9 @@ from dash.exceptions import PreventUpdate
 # This stylesheet makes the buttons and table pretty.
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets, suppress_callback_exceptions=True)
+
+server = app.server
 
 app.layout = html.Div([
     # The memory store reverts to the default on every page refresh
